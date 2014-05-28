@@ -2,7 +2,11 @@ import os
 import random
 import struct
 from io import BytesIO
+
 from Crypto.Cipher import AES
+
+from django.utils.translation import ugettext as _
+
 from modoboa.lib import parameters
 from modoboa.lib.exceptions import ModoboaException
 
@@ -30,7 +34,7 @@ def delete_credentials(account):
         return
     try:
         os.remove(fname)
-    except OSError, e:
+    except OSError:
         pass
 
 

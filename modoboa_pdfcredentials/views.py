@@ -4,10 +4,10 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import (
     login_required, permission_required
 )
-from modoboa.admin.models import User
+from modoboa.core.models import User
 from modoboa.lib.exceptions import ModoboaException, PermDeniedException
 from modoboa.lib import parameters
-from lib import decrypt_file, get_creds_filename
+from .lib import decrypt_file, get_creds_filename
 
 
 @login_required

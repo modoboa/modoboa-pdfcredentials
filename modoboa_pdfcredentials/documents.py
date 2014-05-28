@@ -13,7 +13,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from django.utils.translation import ugettext as _
 from django.conf import settings
 from modoboa.lib import parameters
-from lib import crypt_and_save_to_file, get_creds_filename
+from .lib import crypt_and_save_to_file, get_creds_filename
 
 styles = getSampleStyleSheet()
 styles.add(ParagraphStyle(

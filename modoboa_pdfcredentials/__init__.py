@@ -1,21 +1,23 @@
 import os
 from django.utils.translation import ugettext_lazy, ugettext as _
 from django.core.urlresolvers import reverse
-from modoboa.extensions import ModoExtension, exts_pool
+from modoboa.core.extensions import ModoExtension, exts_pool
 from modoboa.lib import events, parameters
 from modoboa.lib.exceptions import ModoboaException
-from documents import credentials
-from lib import init_storage_dir, delete_credentials, get_creds_filename
+from .documents import credentials
+from .lib import init_storage_dir, delete_credentials, get_creds_filename
 
 
 class PdfCredentials(ModoExtension):
     name = "modoboa_pdfcredentials"
     label = ugettext_lazy("PDF credentials")
     version = "1.0"
-    description = ugettext_lazy("Generate PDF documents containing users' credentials")
+    description = ugettext_lazy(
+        "Generate PDF documents containing users' credentials"
+    )
 
     def load(self):
-        from app_settings import ParametersForm
+        from .app_settings import ParametersForm
         parameters.register(ParametersForm, _("PDF credentials"))
 
     def destroy(self):
