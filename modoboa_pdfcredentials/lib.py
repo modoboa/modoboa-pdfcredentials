@@ -39,7 +39,7 @@ def delete_credentials(account):
 
 
 def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
-    key = parameters.get_admin("SECRET_KEY", app="admin")
+    key = parameters.get_admin("SECRET_KEY", app="core")
     iv = ''.join(chr(random.randint(0, 0xFF)) for i in range(16))
     encryptor = AES.new(key, AES.MODE_CBC, iv)
     with open(filename, 'wb') as fp:
@@ -56,7 +56,7 @@ def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
 
 def decrypt_file(filename, chunksize=24*1024):
     buff = BytesIO()
-    key = parameters.get_admin("SECRET_KEY", app="admin")
+    key = parameters.get_admin("SECRET_KEY", app="core")
     with open(filename, 'rb') as fp:
         origsize = struct.unpack('<Q', fp.read(struct.calcsize('Q')))[0]
         iv = fp.read(16)

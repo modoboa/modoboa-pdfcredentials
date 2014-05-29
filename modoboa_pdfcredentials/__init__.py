@@ -39,7 +39,7 @@ def password_updated(account, raw_password, creation):
 
 
 @events.observe("AccountDeleted")
-def account_deleted(account):
+def account_deleted(account, byuser, **kwargs):
     delete_credentials(account)
 
 
