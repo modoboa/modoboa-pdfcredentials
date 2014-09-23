@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-23 13:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Antoine Nguyen <tonio@ngyn.org>\n"
+"Language: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: __init__.py:13 __init__.py:21
+msgid "PDF credentials"
+msgstr "Identifiants en PDF"
+
+#: __init__.py:16
+msgid "Generate PDF documents containing users' credentials"
+msgstr "Génère des documents PDF contenant les identifiants des utilisateurs"
+
+#: __init__.py:56
+msgid "Retrieve user's credentials as a PDF document"
+msgstr "Récupérer les identifiant de l'utilisateur sous forme d'un document PDF"
+
+#: app_settings.py:10
+msgid "Documents settings"
+msgstr "Paramètres des documents"
+
+#: app_settings.py:13
+msgid "Modoboa full URL"
+msgstr "URL complète de Modoboa"
+
+#: app_settings.py:15
+msgid "The URL of your Modoboa site. It will appear into the documents."
+msgstr "L'URL de votre instance Modoboa. Elle apparaitra dans les documents."
+
+#: app_settings.py:18
+msgid "Documents storage"
+msgstr "Stockage des documents"
+
+#: app_settings.py:21
+msgid "Directory to save documents into"
+msgstr "Répertoire dans lequel les documents sont sauvegardés"
+
+#: app_settings.py:23
+msgid "Path to a directory where PDF documents will be saved"
+msgstr "Chemin d'accès vers le répertoire ou seront stockés les documents"
+
+#: app_settings.py:26
+msgid "Security options"
+msgstr "Options de sécurité"
+
+#: app_settings.py:29
+msgid "Delete documents after the first download"
+msgstr "Supprimer les documents après le premier téléchargement"
+
+#: app_settings.py:31
+msgid ""
+"Automatically delete a document just after its first download from this "
+"interface"
+msgstr ""
+"Supprimer automatiquement un document juste après son premier téléchargement "
+" depuis cette interface"
+
+#: app_settings.py:35
+msgid "Generate documents only at account creation"
+msgstr "Générer les documents à la création des comptes uniquement"
+
+#: app_settings.py:37
+msgid ""
+"Generate a new document only when a new account is created. If set to no, a "
+"new document will be created each time a password is updated."
+msgstr ""
+"Génère un nouveau document uniquement lors de la création d'un compte. "
+"Si défini à non, un nouveau document sera généré chaque fois qu'un mot de passe est changé."
+
+#: documents.py:35 documents.py:49
+msgid "Personal account information"
+msgstr "Informations de compte personnel"
+
+#: documents.py:38
+msgid "Powered by Modoboa - Mail hosting made simple"
+msgstr "Propulsé par Modoboa - L'hébergement mais simplifié"
+
+#: documents.py:51
+#, python-format
+msgid ""
+"\n"
+"    Dear %s, this document contains the credentials you will need\n"
+"    to connect to Modoboa. Learn the content and destroy\n"
+"    the document as soon as possible.\n"
+"    "
+msgstr ""
+"\n"
+"    Cher %s, ce document contient les identifiants dont vous aurez\n"
+"    besoin pour vous connecter à Modoboa. Apprenez les puis détruisez\n"
+"    ce document le plus rapidement possible.\n"
+"    "
+
+#: documents.py:59
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: documents.py:60
+msgid "Password"
+msgstr "Mot de passe"
+
+#: lib.py:22
+#, python-format
+msgid "Failed to create the directory that will contains PDF documents (%s)"
+msgstr "Echec de la création du répertoire qui contiendra les document PDF (%s)"
+
+#: views.py:21
+msgid "No document available for this user"
+msgstr "Aucun document disponible pour cet utilisateur"
