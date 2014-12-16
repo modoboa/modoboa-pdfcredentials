@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-23 13:20+0200\n"
+"POT-Creation-Date: 2014-12-16 17:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Antoine Nguyen <tonio@ngyn.org>\n"
 "Language: French\n"
@@ -10,17 +10,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: __init__.py:13 __init__.py:21
+#: __init__.py:15 __init__.py:23
 msgid "PDF credentials"
 msgstr "Identifiants en PDF"
 
-#: __init__.py:16
+#: __init__.py:18
 msgid "Generate PDF documents containing users' credentials"
 msgstr "Génère des documents PDF contenant les identifiants des utilisateurs"
 
-#: __init__.py:56
+#: __init__.py:58
 msgid "Retrieve user's credentials as a PDF document"
-msgstr "Récupérer les identifiant de l'utilisateur sous forme d'un document PDF"
+msgstr ""
+"Récupérer les identifiant de l'utilisateur sous forme d'un document PDF"
 
 #: app_settings.py:10
 msgid "Documents settings"
@@ -59,8 +60,8 @@ msgid ""
 "Automatically delete a document just after its first download from this "
 "interface"
 msgstr ""
-"Supprimer automatiquement un document juste après son premier téléchargement "
-" depuis cette interface"
+"Supprimer automatiquement un document juste après son premier "
+"téléchargement  depuis cette interface"
 
 #: app_settings.py:35
 msgid "Generate documents only at account creation"
@@ -71,8 +72,9 @@ msgid ""
 "Generate a new document only when a new account is created. If set to no, a "
 "new document will be created each time a password is updated."
 msgstr ""
-"Génère un nouveau document uniquement lors de la création d'un compte. "
-"Si défini à non, un nouveau document sera généré chaque fois qu'un mot de passe est changé."
+"Génère un nouveau document uniquement lors de la création d'un compte. Si "
+"défini à non, un nouveau document sera généré chaque fois qu'un mot de passe "
+"est changé."
 
 #: documents.py:35 documents.py:49
 msgid "Personal account information"
@@ -80,22 +82,20 @@ msgstr "Informations de compte personnel"
 
 #: documents.py:38
 msgid "Powered by Modoboa - Mail hosting made simple"
-msgstr "Propulsé par Modoboa - L'hébergement mais simplifié"
+msgstr "Propulsé par Modoboa - L'hébergement mail simplifié"
 
 #: documents.py:51
 #, python-format
 msgid ""
 "\n"
-"    Dear %s, this document contains the credentials you will need\n"
-"    to connect to Modoboa. Learn the content and destroy\n"
-"    the document as soon as possible.\n"
-"    "
+"Dear %s, this document contains the credentials you will need\n"
+"to connect to Modoboa. Learn the content and destroy\n"
+"the document as soon as possible.\n"
 msgstr ""
 "\n"
-"    Cher %s, ce document contient les identifiants dont vous aurez\n"
-"    besoin pour vous connecter à Modoboa. Apprenez les puis détruisez\n"
-"    ce document le plus rapidement possible.\n"
-"    "
+"Cher %s, ce document contient les identifiants dont vous aurez\n"
+"besoin pour vous connecter à Modoboa. Apprenez les puis détruisez\n"
+"ce document le plus rapidement possible.\n"
 
 #: documents.py:59
 msgid "Username"
@@ -108,7 +108,8 @@ msgstr "Mot de passe"
 #: lib.py:22
 #, python-format
 msgid "Failed to create the directory that will contains PDF documents (%s)"
-msgstr "Echec de la création du répertoire qui contiendra les document PDF (%s)"
+msgstr ""
+"Echec de la création du répertoire qui contiendra les document PDF (%s)"
 
 #: views.py:21
 msgid "No document available for this user"

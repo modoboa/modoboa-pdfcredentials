@@ -1,6 +1,8 @@
-from django.conf.urls import patterns
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns(
     'modoboa_pdfcredentials.views',
-    (r'^credentials/(?P<accountid>\d+)/$', 'get_account_credentials'),
+
+    url(r'^credentials/(?P<accountid>\d+)/$', 'get_account_credentials',
+        name="account_credentials"),
 )

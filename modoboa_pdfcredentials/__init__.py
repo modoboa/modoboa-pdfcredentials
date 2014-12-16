@@ -1,6 +1,8 @@
 import os
+
 from django.utils.translation import ugettext_lazy, ugettext as _
 from django.core.urlresolvers import reverse
+
 from modoboa.core.extensions import ModoExtension, exts_pool
 from modoboa.lib import events, parameters
 from modoboa.lib.exceptions import ModoboaException
@@ -50,8 +52,8 @@ def extra_account_actions(account):
         return []
     return [{
         "name": "get_credentials",
-        "url": reverse("modoboa_pdfcredentials.views.get_account_credentials",
+        "url": reverse("modoboa_pdfcredentials:account_credentials",
                        args=[account.id]),
-        "img": "icon-download-alt",
+        "img": "fa fa-download",
         "title": _("Retrieve user's credentials as a PDF document")
     }]

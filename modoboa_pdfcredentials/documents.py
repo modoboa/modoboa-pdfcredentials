@@ -49,10 +49,10 @@ def credentials(account, password):
     story.append(Paragraph(_("Personal account information"), styles["Title"]))
     story.append(Spacer(1, 2 * cm))
     story.append(Paragraph(_("""
-    Dear %s, this document contains the credentials you will need
-    to connect to Modoboa. Learn the content and destroy
-    the document as soon as possible.
-    """ % account.fullname), styles["Normal"]))
+Dear %s, this document contains the credentials you will need
+to connect to Modoboa. Learn the content and destroy
+the document as soon as possible.
+""") % account.fullname, styles["Normal"]))
     url = parameters.get_admin("SITE_URL")
     data = [
         ["URL", url],

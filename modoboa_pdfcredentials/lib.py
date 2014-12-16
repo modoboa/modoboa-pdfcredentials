@@ -19,7 +19,7 @@ def init_storage_dir():
         os.mkdir(storage_dir)
     except IOError, e:
         raise ModoboaException(
-            _("Failed to create the directory that will contains PDF documents (%s)" % e)
+            _("Failed to create the directory that will contains PDF documents (%s)") % e
         )
 
 
