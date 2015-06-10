@@ -32,6 +32,6 @@ Configuration
 All the configuration is done from the admin panel (*Modoboa >
 Parameters > PDF Credentials*).
 
-svg?style=flat
+.. |landscape| image:: https://landscape.io/github/modoboa/modoboa-pdfcredentials/master/landscape.svg?style=flat
    :target: https://landscape.io/github/modoboa/modoboa-pdfcredentials/master
    :alt: Code Health
