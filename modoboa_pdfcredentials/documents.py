@@ -1,5 +1,8 @@
-import os
+"""The code used to generate PDF files (based on Reportlab."""
+
 from io import BytesIO
+import os
+
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import cm
@@ -10,9 +13,12 @@ from reportlab.platypus import (
     Image
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+
 from django.utils.translation import ugettext as _
 from django.conf import settings
-from modoboa.lib import parameters
+
+from django.contrib.sites.models import Site
+
 from .lib import crypt_and_save_to_file, get_creds_filename
 
 styles = getSampleStyleSheet()
@@ -30,6 +36,7 @@ def resized_image(path, width=1*cm):
 
 
 def credentials(account, password):
+    """Generate a PDF document containing account credentials."""
 
     def page_template(canvas, doc):
         canvas.setTitle(_("Personal account information"))
@@ -53,7 +60,8 @@ Dear %s, this document contains the credentials you will need
 to connect to Modoboa. Learn the content and destroy
 the document as soon as possible.
 """) % account.fullname, styles["Normal"]))
-    url = parameters.get_admin("SITE_URL")
+    url = "http(s)://{}{}".format(
+        Site.objects.get_current().domain, settings.LOGIN_URL)
     data = [
         ["URL", url],
         [_("Username"), account.username],
@@ -63,7 +71,7 @@ the document as soon as possible.
     table.setStyle(TableStyle([
         ('GRID', (0, 0), (-1, -1), 1, colors.black),
         ('BACKGROUND', (0, 0), (0, -1), colors.lightgrey),
-        #('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+        # ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
     ]))
     story.append(Spacer(1, 2 * cm))
     story.append(table)

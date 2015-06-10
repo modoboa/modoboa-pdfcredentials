@@ -1,7 +1,9 @@
+"""Internal library."""
+
+from io import BytesIO
 import os
 import random
 import struct
-from io import BytesIO
 
 from Crypto.Cipher import AES
 
@@ -12,6 +14,7 @@ from modoboa.lib.exceptions import ModoboaException
 
 
 def init_storage_dir():
+    """Create the directory whare documents will be stored."""
     storage_dir = parameters.get_admin("STORAGE_DIR")
     if os.path.exists(storage_dir):
         return
@@ -19,16 +22,19 @@ def init_storage_dir():
         os.mkdir(storage_dir)
     except IOError, e:
         raise ModoboaException(
-            _("Failed to create the directory that will contains PDF documents (%s)") % e
+            _("Failed to create the directory that will contain "
+              "PDF documents (%s)") % e
         )
 
 
 def get_creds_filename(account):
+    """Return the full path of a document."""
     storage_dir = parameters.get_admin("STORAGE_DIR")
     return os.path.join(storage_dir, account.username + ".pdf")
 
 
 def delete_credentials(account):
+    """Try to delete a local file."""
     fname = get_creds_filename(account)
     if not os.path.exists(fname):
         return
@@ -39,8 +45,9 @@ def delete_credentials(account):
 
 
 def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
+    """Crypt content and save it to a file."""
     key = parameters.get_admin("SECRET_KEY", app="core")
-    iv = ''.join(chr(random.randint(0, 0xFF)) for i in range(16))
+    iv = "".join(chr(random.randint(0, 0xFF)) for i in range(16))
     encryptor = AES.new(key, AES.MODE_CBC, iv)
     with open(filename, 'wb') as fp:
         fp.write(struct.pack('<Q', length))
@@ -55,6 +62,7 @@ def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
 
 
 def decrypt_file(filename, chunksize=24*1024):
+    """Decrypt the content of a file and return it."""
     buff = BytesIO()
     key = parameters.get_admin("SECRET_KEY", app="core")
     with open(filename, 'rb') as fp:
