@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# controlc.de, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Modoboa\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-10 20:47+0200\n"
+"PO-Revision-Date: 2015-07-11 11:16+0000\n"
+"Last-Translator: controlc.de\n"
+"Language-Team: German (http://www.transifex.com/tonio/modoboa/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app_settings.py:16
+msgid "Documents storage"
+msgstr "Dokumentenablage"
+
+#: app_settings.py:19
+msgid "Directory to save documents into"
+msgstr "Speicherpfad für Dokumente"
+
+#: app_settings.py:21
+msgid "Path to a directory where PDF documents will be saved"
+msgstr "Dateipfad in dem die PDF-Dokumente abgelegt werden"
+
+#: app_settings.py:24
+msgid "Security options"
+msgstr "Sicherheitseinstellungen"
+
+#: app_settings.py:27
+msgid "Delete documents after the first download"
+msgstr "Lösche Dokumente nach dem ersten Download"
+
+#: app_settings.py:30
+msgid ""
+"Automatically delete a document just after its first download from this "
+"interface"
+msgstr "Löscht automatisch das Dokument, wenn es das erste Mal über dieses Oberfläche heruntergeladen wurde"
+
+#: app_settings.py:36
+msgid "Generate documents only at account creation"
+msgstr "Erzeuge Dokumente nur wenn ein Konto angelegt wurde"
+
+#: app_settings.py:39
+msgid ""
+"Generate a new document only when a new account is created. If set to no, a "
+"new document will be created each time a password is updated."
+msgstr "Erzeuge ein neues Dokument nur wenn ein neues Konto erstellt wurde. Wenn die Option auf Nein steht wird jedes Mal ein neues Dokument erstellt, wenn ein Passwort aktualisiert wurde."
+
+#: documents.py:42 documents.py:56
+msgid "Personal account information"
+msgstr "Persönliche Kontoinformationen"
+
+#: documents.py:45
+msgid "Powered by Modoboa - Mail hosting made simple"
+msgstr "Powered by Modoboa - Mail hosting made simple"
+
+#: documents.py:58
+#, python-format
+msgid ""
+"\n"
+"Dear %s, this document contains the credentials you will need\n"
+"to connect to Modoboa. Learn the content and destroy\n"
+"the document as soon as possible.\n"
+msgstr "\nLiebe/r %s, dieses Dokument enthält die Anmeldeinformationen, die Du benötigst um Dich mit Modoboa zu verbinden. Präge Dir bitte die Informationen ein und lösche anschliessend dieses Dokument.\n"
+
+#: documents.py:67
+msgid "Username"
+msgstr "Benutzername"
+
+#: documents.py:68
+msgid "Password"
+msgstr "Passwort"
+
+#: lib.py:25
+#, python-format
+msgid "Failed to create the directory that will contain PDF documents (%s)"
+msgstr "Ein Fehler ist bei der Erstellung des Pfades, der die PDF Dokumente (%s) enthält, aufgetreten. "
+
+#: modo_extension.py:20 modo_extension.py:28
+msgid "PDF credentials"
+msgstr "PDF Anmeldeinformationen"
+
+#: modo_extension.py:23
+msgid "Generate PDF documents containing users' credentials"
+msgstr "Erzeuge PDF-Dokumente welche die Benutzeranmeldeinformationen enthält"
+
+#: modo_extension.py:57
+msgid "Retrieve user's credentials as a PDF document"
+msgstr "Erhalte die Anmeldeinformationen des Benutzer als ein PDF-Dokument"
+
+#: views.py:30
+msgid "No document available for this user"
+msgstr "Kein Dokument für diesen Benutzer verfügbar"
