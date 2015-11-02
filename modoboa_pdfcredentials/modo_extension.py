@@ -18,7 +18,7 @@ class PdfCredentials(ModoExtension):
 
     name = "modoboa_pdfcredentials"
     label = ugettext_lazy("PDF credentials")
-    version = "1.0.0"
+    version = "1.0.1"
     description = ugettext_lazy(
         "Generate PDF documents containing users' credentials"
     )

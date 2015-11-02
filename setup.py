@@ -54,7 +54,7 @@ def read(fname):
 
 
 setup(name="modoboa-pdfcredentials",
-      version='1.0.0',
+      version='1.0.1',
       url='http://modoboa.org/',
       license='MIT',
       description="Generate PDF documents containing user credentials",
