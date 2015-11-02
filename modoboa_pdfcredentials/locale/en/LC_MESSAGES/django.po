@@ -1,63 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-10 20:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Antoine Nguyen <tonio@ngyn.org>\n"
-"Language: French\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: app_settings.py:16
 msgid "Documents storage"
-msgstr "Stockage des documents"
+msgstr ""
 
 #: app_settings.py:19
 msgid "Directory to save documents into"
-msgstr "Répertoire dans lequel les documents sont sauvegardés"
+msgstr ""
 
 #: app_settings.py:21
 msgid "Path to a directory where PDF documents will be saved"
-msgstr "Chemin d'accès vers le répertoire ou seront stockés les documents"
+msgstr ""
 
 #: app_settings.py:24
 msgid "Security options"
-msgstr "Options de sécurité"
+msgstr ""
 
 #: app_settings.py:27
 msgid "Delete documents after the first download"
-msgstr "Supprimer les documents après le premier téléchargement"
+msgstr ""
 
 #: app_settings.py:30
 msgid ""
 "Automatically delete a document just after its first download from this "
 "interface"
 msgstr ""
-"Supprimer automatiquement un document juste après son premier "
-"téléchargement  depuis cette interface"
 
 #: app_settings.py:36
 msgid "Generate documents only at account creation"
-msgstr "Générer les documents à la création des comptes uniquement"
+msgstr ""
 
 #: app_settings.py:39
 msgid ""
 "Generate a new document only when a new account is created. If set to no, a "
 "new document will be created each time a password is updated."
 msgstr ""
-"Génère un nouveau document uniquement lors de la création d'un compte. Si "
-"défini à non, un nouveau document sera généré chaque fois qu'un mot de passe "
-"est changé."
 
 #: documents.py:42 documents.py:56
 msgid "Personal account information"
-msgstr "Informations de compte personnel"
+msgstr ""
 
 #: documents.py:45
 msgid "Powered by Modoboa - Mail hosting made simple"
-msgstr "Propulsé par Modoboa - L'hébergement mail simplifié"
+msgstr ""
 
 #: documents.py:58
 #, python-format
@@ -67,38 +69,32 @@ msgid ""
 "to connect to Modoboa. Learn the content and destroy\n"
 "the document as soon as possible.\n"
 msgstr ""
-"\n"
-"Cher %s, ce document contient les identifiants dont vous aurez\n"
-"besoin pour vous connecter à Modoboa. Apprenez les puis détruisez\n"
-"ce document le plus rapidement possible.\n"
 
 #: documents.py:67
 msgid "Username"
-msgstr "Nom d'utilisateur"
+msgstr ""
 
 #: documents.py:68
 msgid "Password"
-msgstr "Mot de passe"
+msgstr ""
 
 #: lib.py:25
 #, python-format
 msgid "Failed to create the directory that will contain PDF documents (%s)"
 msgstr ""
-"Echec lors de la création du répertoire qui contiendra les documents PDF (%s)"
 
 #: modo_extension.py:20 modo_extension.py:28
 msgid "PDF credentials"
-msgstr "Identifiants en PDF"
+msgstr ""
 
 #: modo_extension.py:23
 msgid "Generate PDF documents containing users' credentials"
-msgstr "Génère des documents PDF contenant les identifiants des utilisateurs"
+msgstr ""
 
 #: modo_extension.py:57
 msgid "Retrieve user's credentials as a PDF document"
 msgstr ""
-"Récupérer les identifiant de l'utilisateur sous forme d'un document PDF"
 
 #: views.py:30
 msgid "No document available for this user"
-msgstr "Aucun document disponible pour cet utilisateur"
+msgstr ""
