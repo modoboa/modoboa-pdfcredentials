@@ -10,7 +10,7 @@ from Crypto.Cipher import AES
 from django.utils.translation import ugettext as _
 
 from modoboa.lib import parameters
-from modoboa.lib.exceptions import ModoboaException
+from modoboa.lib.exceptions import InternalError
 
 
 def init_storage_dir():
@@ -20,10 +20,10 @@ def init_storage_dir():
         return
     try:
         os.mkdir(storage_dir)
-    except IOError, e:
-        raise ModoboaException(
+    except (OSError, IOError) as inst:
+        raise InternalError(
             _("Failed to create the directory that will contain "
-              "PDF documents (%s)") % e
+              "PDF documents (%s)") % inst
         )
 
 
