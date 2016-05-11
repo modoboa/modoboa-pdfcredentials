@@ -35,6 +35,8 @@ def password_updated(account, raw_password, creation):
     generate_at_creation = parameters.get_admin("GENERATE_AT_CREATION")
     if generate_at_creation == "yes" and not creation:
         return
+    if account.role == "SuperAdmins":
+        return
     init_storage_dir()
     credentials(account, raw_password)
 
