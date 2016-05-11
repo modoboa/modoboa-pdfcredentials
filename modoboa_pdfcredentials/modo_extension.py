@@ -11,6 +11,8 @@ from modoboa.lib import events, parameters
 from .documents import credentials
 from .lib import init_storage_dir, delete_credentials, get_creds_filename
 
+from . import __version__
+
 
 class PdfCredentials(ModoExtension):
 
@@ -18,7 +20,7 @@ class PdfCredentials(ModoExtension):
 
     name = "modoboa_pdfcredentials"
     label = ugettext_lazy("PDF credentials")
-    version = "1.0.1"
+    version = __version__
     description = ugettext_lazy(
         "Generate PDF documents containing users' credentials"
     )

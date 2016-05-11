@@ -5,6 +5,9 @@ import os
 import re
 from setuptools import setup, find_packages
 
+from modoboa_pdfcredentials import __version__
+
+
 ROOT = os.path.dirname(__file__)
 PIP_REQUIRES = os.path.join(ROOT, "requirements.txt")
 
@@ -53,24 +56,25 @@ def read(fname):
     return open(os.path.join(ROOT, fname)).read()
 
 
-setup(name="modoboa-pdfcredentials",
-      version='1.0.1',
-      url='http://modoboa.org/',
-      license='MIT',
-      description="Generate PDF documents containing user credentials",
-      long_description=read('README.rst'),
-      author='Antoine Nguyen',
-      author_email='tonio@ngyn.org',
-      packages=find_packages(),
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=parse_requirements(PIP_REQUIRES),
-      dependency_links=parse_dependency_links(PIP_REQUIRES),
-      classifiers=['Development Status :: 5 - Production/Stable',
-                   'Framework :: Django',
-                   'Intended Audience :: System Administrators',
-                   'License :: OSI Approved :: MIT License',
-                   'Operating System :: OS Independent',
-                   'Programming Language :: Python',
-                   'Topic :: Internet :: WWW/HTTP']
+setup(
+    name="modoboa-pdfcredentials",
+    version=__version__,
+    url='http://modoboa.org/',
+    license='MIT',
+    description="Generate PDF documents containing user credentials",
+    long_description=read('README.rst'),
+    author='Antoine Nguyen',
+    author_email='tonio@ngyn.org',
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=parse_requirements(PIP_REQUIRES),
+    dependency_links=parse_dependency_links(PIP_REQUIRES),
+    classifiers=['Development Status :: 5 - Production/Stable',
+                 'Framework :: Django',
+                 'Intended Audience :: System Administrators',
+                 'License :: OSI Approved :: MIT License',
+                 'Operating System :: OS Independent',
+                 'Programming Language :: Python',
+                 'Topic :: Internet :: WWW/HTTP']
 )
