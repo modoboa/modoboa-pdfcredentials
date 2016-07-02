@@ -17,7 +17,7 @@ class ParametersForm(AdminParametersForm):
 
     storage_dir = forms.CharField(
         label=_("Directory to save documents into"),
-        initial="/var/lib/modoboa/pdf_crendentials",
+        initial="/var/lib/modoboa/pdf_credentials",
         help_text=_("Path to a directory where PDF documents will be saved"),
     )
 
