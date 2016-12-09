@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import (
 
 from modoboa.core.models import User
 from modoboa.lib.exceptions import ModoboaException, PermDeniedException
-from modoboa.lib import parameters
+from modoboa.parameters import tools as param_tools
 
 from .lib import decrypt_file, get_creds_filename
 
@@ -29,7 +29,7 @@ def get_account_credentials(request, accountid):
     if not os.path.exists(fname):
         raise ModoboaException(_("No document available for this user"))
     content = decrypt_file(fname)
-    if parameters.get_admin("DELETE_FIRST_DL") == "yes":
+    if param_tools.get_global_parameter("delete_first_dl"):
         os.remove(fname)
     resp = HttpResponse(content)
     resp["Content-Type"] = "application/pdf"
