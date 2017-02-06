@@ -7,6 +7,7 @@ import struct
 
 from Crypto.Cipher import AES
 
+from django.conf import settings
 from django.utils.translation import ugettext as _
 
 from modoboa.lib import parameters
@@ -76,3 +77,14 @@ def decrypt_file(filename, chunksize=24*1024):
             buff.write(decryptor.decrypt(chunk))
         buff.truncate(origsize)
     return buff.getvalue()
+
+
+def get_document_logo():
+    """Retrieve path to logo."""
+    try:
+        logo = settings.MODOBOA_CUSTOM_LOGO
+        logo = os.path.join(settings.MEDIA_ROOT, os.path.basename(logo))
+    except AttributeError:
+        logo = os.path.join(settings.STATIC_ROOT, "css/modoboa.png")
+    finally:
+        return logo
