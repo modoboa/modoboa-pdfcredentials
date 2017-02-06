@@ -19,7 +19,7 @@ from django.conf import settings
 
 from django.contrib.sites.models import Site
 
-from .lib import crypt_and_save_to_file, get_creds_filename
+from . import lib
 
 styles = getSampleStyleSheet()
 styles.add(ParagraphStyle(
@@ -46,12 +46,11 @@ def credentials(account, password):
                             styles["Footer"])]
         Frame(0, 0, 21 * cm, 4 * cm).addFromList(footer, canvas)
 
-    filename = get_creds_filename(account)
+    filename = lib.get_creds_filename(account)
     buff = BytesIO()
     doc = SimpleDocTemplate(buff, pagesize=A4)
     story = []
-    imgpath = os.path.join(settings.STATIC_ROOT, "css")
-    story.append(resized_image(imgpath + "/modoboa.png", 6*cm))
+    story.append(resized_image(lib.get_document_logo(), 6*cm))
     story.append(Spacer(1, 1 * cm))
     story.append(Paragraph(_("Personal account information"), styles["Title"]))
     story.append(Spacer(1, 2 * cm))
@@ -79,4 +78,4 @@ the document as soon as possible.
     doc.build(story, onFirstPage=page_template, onLaterPages=page_template)
     length = len(buff.getvalue())
     buff.seek(0)
-    crypt_and_save_to_file(buff, filename, length)
+    lib.crypt_and_save_to_file(buff, filename, length)
