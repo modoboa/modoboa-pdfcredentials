@@ -10,7 +10,6 @@ from . import forms
 
 
 class PdfCredentials(ModoExtension):
-
     """Extension declaration."""
 
     name = "modoboa_pdfcredentials"
