@@ -10,13 +10,13 @@ from Crypto.Cipher import AES
 from django.conf import settings
 from django.utils.translation import ugettext as _
 
-from modoboa.lib import parameters
 from modoboa.lib.exceptions import InternalError
+from modoboa.parameters import tools as param_tools
 
 
 def init_storage_dir():
     """Create the directory whare documents will be stored."""
-    storage_dir = parameters.get_admin("STORAGE_DIR")
+    storage_dir = param_tools.get_global_parameter("storage_dir")
     if os.path.exists(storage_dir):
         return
     try:
@@ -30,7 +30,7 @@ def init_storage_dir():
 
 def get_creds_filename(account):
     """Return the full path of a document."""
-    storage_dir = parameters.get_admin("STORAGE_DIR")
+    storage_dir = param_tools.get_global_parameter("storage_dir")
     return os.path.join(storage_dir, account.username + ".pdf")
 
 
@@ -47,7 +47,7 @@ def delete_credentials(account):
 
 def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
     """Crypt content and save it to a file."""
-    key = parameters.get_admin("SECRET_KEY", app="core")
+    key = param_tools.get_global_parameter("secret_key", app="core")
     iv = "".join(chr(random.randint(0, 0xFF)) for i in range(16))
     encryptor = AES.new(key, AES.MODE_CBC, iv)
     with open(filename, 'wb') as fp:
@@ -65,7 +65,7 @@ def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
 def decrypt_file(filename, chunksize=24*1024):
     """Decrypt the content of a file and return it."""
     buff = BytesIO()
-    key = parameters.get_admin("SECRET_KEY", app="core")
+    key = param_tools.get_global_parameter("secret_key", app="core")
     with open(filename, 'rb') as fp:
         origsize = struct.unpack('<Q', fp.read(struct.calcsize('Q')))[0]
         iv = fp.read(16)
