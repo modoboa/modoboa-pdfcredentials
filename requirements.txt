@@ -1,3 +1,2 @@
-modoboa-admin
+modoboa>=1.7.0
 reportlab
-rfc6266
