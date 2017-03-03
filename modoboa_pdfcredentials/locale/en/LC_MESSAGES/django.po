@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-10 20:47+0200\n"
+"POT-Creation-Date: 2017-03-03 09:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,43 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app_settings.py:16
-msgid "Documents storage"
-msgstr ""
-
-#: app_settings.py:19
-msgid "Directory to save documents into"
-msgstr ""
-
-#: app_settings.py:21
-msgid "Path to a directory where PDF documents will be saved"
-msgstr ""
-
-#: app_settings.py:24
-msgid "Security options"
-msgstr ""
-
-#: app_settings.py:27
-msgid "Delete documents after the first download"
-msgstr ""
-
-#: app_settings.py:30
-msgid ""
-"Automatically delete a document just after its first download from this "
-"interface"
-msgstr ""
-
-#: app_settings.py:36
-msgid "Generate documents only at account creation"
-msgstr ""
-
-#: app_settings.py:39
-msgid ""
-"Generate a new document only when a new account is created. If set to no, a "
-"new document will be created each time a password is updated."
-msgstr ""
-
-#: documents.py:42 documents.py:56
+#: documents.py:42 documents.py:55
 msgid "Personal account information"
 msgstr ""
 
@@ -61,7 +25,7 @@ msgstr ""
 msgid "Powered by Modoboa - Mail hosting made simple"
 msgstr ""
 
-#: documents.py:58
+#: documents.py:57
 #, python-format
 msgid ""
 "\n"
@@ -70,29 +34,65 @@ msgid ""
 "the document as soon as possible.\n"
 msgstr ""
 
-#: documents.py:67
+#: documents.py:66
 msgid "Username"
 msgstr ""
 
-#: documents.py:68
+#: documents.py:67
 msgid "Password"
 msgstr ""
 
-#: lib.py:25
+#: forms.py:15
+msgid "Documents storage"
+msgstr ""
+
+#: forms.py:18
+msgid "Directory to save documents into"
+msgstr ""
+
+#: forms.py:20
+msgid "Path to a directory where PDF documents will be saved"
+msgstr ""
+
+#: forms.py:23
+msgid "Security options"
+msgstr ""
+
+#: forms.py:26
+msgid "Delete documents after the first download"
+msgstr ""
+
+#: forms.py:29
+msgid ""
+"Automatically delete a document just after its first download from this "
+"interface"
+msgstr ""
+
+#: forms.py:35
+msgid "Generate documents only at account creation"
+msgstr ""
+
+#: forms.py:38
+msgid ""
+"Generate a new document only when a new account is created. If set to no, a "
+"new document will be created each time a password is updated."
+msgstr ""
+
+#: handlers.py:46
+msgid "Retrieve user's credentials as a PDF document"
+msgstr ""
+
+#: lib.py:26
 #, python-format
 msgid "Failed to create the directory that will contain PDF documents (%s)"
 msgstr ""
 
-#: modo_extension.py:20 modo_extension.py:28
+#: modo_extension.py:16 modo_extension.py:24
 msgid "PDF credentials"
 msgstr ""
 
-#: modo_extension.py:23
+#: modo_extension.py:19
 msgid "Generate PDF documents containing users' credentials"
-msgstr ""
-
-#: modo_extension.py:57
-msgid "Retrieve user's credentials as a PDF document"
 msgstr ""
 
 #: views.py:30

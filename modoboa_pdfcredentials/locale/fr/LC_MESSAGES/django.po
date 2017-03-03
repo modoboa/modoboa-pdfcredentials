@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-10 20:47+0200\n"
+"POT-Creation-Date: 2017-03-03 09:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Antoine Nguyen <tonio@ngyn.org>\n"
 "Language: French\n"
@@ -10,48 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app_settings.py:16
-msgid "Documents storage"
-msgstr "Stockage des documents"
-
-#: app_settings.py:19
-msgid "Directory to save documents into"
-msgstr "Répertoire dans lequel les documents sont sauvegardés"
-
-#: app_settings.py:21
-msgid "Path to a directory where PDF documents will be saved"
-msgstr "Chemin d'accès vers le répertoire ou seront stockés les documents"
-
-#: app_settings.py:24
-msgid "Security options"
-msgstr "Options de sécurité"
-
-#: app_settings.py:27
-msgid "Delete documents after the first download"
-msgstr "Supprimer les documents après le premier téléchargement"
-
-#: app_settings.py:30
-msgid ""
-"Automatically delete a document just after its first download from this "
-"interface"
-msgstr ""
-"Supprimer automatiquement un document juste après son premier "
-"téléchargement  depuis cette interface"
-
-#: app_settings.py:36
-msgid "Generate documents only at account creation"
-msgstr "Générer les documents à la création des comptes uniquement"
-
-#: app_settings.py:39
-msgid ""
-"Generate a new document only when a new account is created. If set to no, a "
-"new document will be created each time a password is updated."
-msgstr ""
-"Génère un nouveau document uniquement lors de la création d'un compte. Si "
-"défini à non, un nouveau document sera généré chaque fois qu'un mot de passe "
-"est changé."
-
-#: documents.py:42 documents.py:56
+#: documents.py:42 documents.py:55
 msgid "Personal account information"
 msgstr "Informations de compte personnel"
 
@@ -59,7 +18,7 @@ msgstr "Informations de compte personnel"
 msgid "Powered by Modoboa - Mail hosting made simple"
 msgstr "Propulsé par Modoboa - L'hébergement mail simplifié"
 
-#: documents.py:58
+#: documents.py:57
 #, python-format
 msgid ""
 "\n"
@@ -72,32 +31,73 @@ msgstr ""
 "besoin pour vous connecter à Modoboa. Apprenez les puis détruisez\n"
 "ce document le plus rapidement possible.\n"
 
-#: documents.py:67
+#: documents.py:66
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: documents.py:68
+#: documents.py:67
 msgid "Password"
 msgstr "Mot de passe"
 
-#: lib.py:25
+#: forms.py:15
+msgid "Documents storage"
+msgstr "Stockage des documents"
+
+#: forms.py:18
+msgid "Directory to save documents into"
+msgstr "Répertoire dans lequel les documents sont sauvegardés"
+
+#: forms.py:20
+msgid "Path to a directory where PDF documents will be saved"
+msgstr "Chemin d'accès vers le répertoire ou seront stockés les documents"
+
+#: forms.py:23
+msgid "Security options"
+msgstr "Options de sécurité"
+
+#: forms.py:26
+msgid "Delete documents after the first download"
+msgstr "Supprimer les documents après le premier téléchargement"
+
+#: forms.py:29
+msgid ""
+"Automatically delete a document just after its first download from this "
+"interface"
+msgstr ""
+"Supprimer automatiquement un document juste après son premier "
+"téléchargement  depuis cette interface"
+
+#: forms.py:35
+msgid "Generate documents only at account creation"
+msgstr "Générer les documents à la création des comptes uniquement"
+
+#: forms.py:38
+msgid ""
+"Generate a new document only when a new account is created. If set to no, a "
+"new document will be created each time a password is updated."
+msgstr ""
+"Génère un nouveau document uniquement lors de la création d'un compte. Si "
+"défini à non, un nouveau document sera généré chaque fois qu'un mot de passe "
+"est changé."
+
+#: handlers.py:46
+msgid "Retrieve user's credentials as a PDF document"
+msgstr ""
+"Récupérer les identifiant de l'utilisateur sous forme d'un document PDF"
+
+#: lib.py:26
 #, python-format
 msgid "Failed to create the directory that will contain PDF documents (%s)"
 msgstr ""
 "Echec lors de la création du répertoire qui contiendra les documents PDF (%s)"
 
-#: modo_extension.py:20 modo_extension.py:28
+#: modo_extension.py:16 modo_extension.py:24
 msgid "PDF credentials"
 msgstr "Identifiants en PDF"
 
-#: modo_extension.py:23
+#: modo_extension.py:19
 msgid "Generate PDF documents containing users' credentials"
 msgstr "Génère des documents PDF contenant les identifiants des utilisateurs"
-
-#: modo_extension.py:57
-msgid "Retrieve user's credentials as a PDF document"
-msgstr ""
-"Récupérer les identifiant de l'utilisateur sous forme d'un document PDF"
 
 #: views.py:30
 msgid "No document available for this user"

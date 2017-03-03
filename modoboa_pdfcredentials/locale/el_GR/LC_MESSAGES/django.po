@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Giannis Kapetanakis <bilias@edu.physics.uoc.gr>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Modoboa\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-03 09:08+0100\n"
+"PO-Revision-Date: 2016-11-09 16:13+0000\n"
+"Last-Translator: Giannis Kapetanakis <bilias@edu.physics.uoc.gr>\n"
+"Language-Team: Greek (Greece) (http://www.transifex.com/tonio/modoboa/language/el_GR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el_GR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: documents.py:42 documents.py:55
+msgid "Personal account information"
+msgstr "Προσωπικές πληροφορίες λογαριασμού"
+
+#: documents.py:45
+msgid "Powered by Modoboa - Mail hosting made simple"
+msgstr "Powered by Modoboa - Mail hosting made simple"
+
+#: documents.py:57
+#, python-format
+msgid ""
+"\n"
+"Dear %s, this document contains the credentials you will need\n"
+"to connect to Modoboa. Learn the content and destroy\n"
+"the document as soon as possible.\n"
+msgstr "\nΑγαπητέ/ή %s, αυτό το έγγραφο περιέχει τα διαπιστευτήρια\nπου χρειάζεστε για να συνδεθείτε με το Modoboa.\nΑποστηθίστε το περιεχόμενο και διαγράψτε το έγγραφο\nτο συντομότερο δυνατόν.\n"
+
+#: documents.py:66
+msgid "Username"
+msgstr "Όνομα Χρήστη"
+
+#: documents.py:67
+msgid "Password"
+msgstr "Κωδικός"
+
+#: forms.py:15
+msgid "Documents storage"
+msgstr "Αποθηκευτικός χώρος εγγράφων"
+
+#: forms.py:18
+msgid "Directory to save documents into"
+msgstr "Κατάλογος αρχείων για την αποθήκευση εγγράφων"
+
+#: forms.py:20
+msgid "Path to a directory where PDF documents will be saved"
+msgstr "Κατάλογος αρχείων για την αποθήκευση PDF εγγράφων"
+
+#: forms.py:23
+msgid "Security options"
+msgstr "Ρυθμίσεις Ασφαλείας"
+
+#: forms.py:26
+msgid "Delete documents after the first download"
+msgstr "Διαγραφή εγγράφων μετά την πρώτη λήψη"
+
+#: forms.py:29
+msgid ""
+"Automatically delete a document just after its first download from this "
+"interface"
+msgstr "Αυτόματη διαγραφή εγγράφου μετά την πρώτη λήψη από αυτήν την διεπαφή"
+
+#: forms.py:35
+msgid "Generate documents only at account creation"
+msgstr "Δημιουργία εγγράφων μόνο κατά την δημιουργία λογαριασμού"
+
+#: forms.py:38
+msgid ""
+"Generate a new document only when a new account is created. If set to no, a "
+"new document will be created each time a password is updated."
+msgstr "Δημιουργία νέου εγγράφου μόνο κατά την δημιουργία νέου λογαριασμού. Εάν επιλέξετε όχι, ένα νέο έγγραφο θα δημιουργείται κάθε φορά που ο κωδικός χρήστη ενημερώνεται."
+
+#: handlers.py:46
+msgid "Retrieve user's credentials as a PDF document"
+msgstr "Ανάκτηση διαπιστευτηρίων χρήστη σε αρχείο PDF"
+
+#: lib.py:26
+#, python-format
+msgid "Failed to create the directory that will contain PDF documents (%s)"
+msgstr "Σφάλμα στην δημιουργία του καταλόγου αρχείων για την αποθήκευση PDF εγγράφων (%s)"
+
+#: modo_extension.py:16 modo_extension.py:24
+msgid "PDF credentials"
+msgstr "Διαπιστευτήρια PDF"
+
+#: modo_extension.py:19
+msgid "Generate PDF documents containing users' credentials"
+msgstr "Δημιουργία PDF εγγράφων που να περιέχουν τα διαπιστευτήρια χρηστών"
+
+#: views.py:30
+msgid "No document available for this user"
+msgstr "Δεν υπάρχουν διαθέσιμα έγγραφα για αυτόν τον χρήστη"

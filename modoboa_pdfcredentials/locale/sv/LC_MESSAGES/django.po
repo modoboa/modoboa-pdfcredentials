@@ -1,30 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# controlc.de, 2015
+# Olle Gustafsson <olle@dalnix.se>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Modoboa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-03 09:08+0100\n"
-"PO-Revision-Date: 2015-07-11 11:16+0000\n"
-"Last-Translator: controlc.de\n"
-"Language-Team: German (http://www.transifex.com/tonio/modoboa/language/de/)\n"
-"Language: de\n"
+"PO-Revision-Date: 2016-11-09 16:13+0000\n"
+"Last-Translator: Olle Gustafsson <olle@dalnix.se>\n"
+"Language-Team: Swedish (http://www.transifex.com/tonio/modoboa/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: documents.py:42 documents.py:55
 msgid "Personal account information"
-msgstr "Persönliche Kontoinformationen"
+msgstr "Personlig kontoinformation"
 
 #: documents.py:45
 msgid "Powered by Modoboa - Mail hosting made simple"
-msgstr "Powered by Modoboa - Mail hosting made simple"
+msgstr "Drivs av Modoboa - Mail hosting gjort enkelt"
 
 #: documents.py:57
 #, python-format
@@ -33,80 +33,69 @@ msgid ""
 "Dear %s, this document contains the credentials you will need\n"
 "to connect to Modoboa. Learn the content and destroy\n"
 "the document as soon as possible.\n"
-msgstr ""
-"\n"
-"Liebe/r %s, dieses Dokument enthält die Anmeldeinformationen, die Du "
-"benötigst um Dich mit Modoboa zu verbinden. Präge Dir bitte die "
-"Informationen ein und lösche anschliessend dieses Dokument.\n"
+msgstr "\nKära %s, detta dokument innehåller de kontouppgifter du behöver för att ansluta till Modoboa. Lär dig innehållet i detta dokument och förstör detta dokument så snart som möjligt\n"
 
 #: documents.py:66
 msgid "Username"
-msgstr "Benutzername"
+msgstr "Användarnamn"
 
 #: documents.py:67
 msgid "Password"
-msgstr "Passwort"
+msgstr "Lösenord"
 
 #: forms.py:15
 msgid "Documents storage"
-msgstr "Dokumentenablage"
+msgstr "Dokumentlagring"
 
 #: forms.py:18
 msgid "Directory to save documents into"
-msgstr "Speicherpfad für Dokumente"
+msgstr "Katalog att spara dokument till"
 
 #: forms.py:20
 msgid "Path to a directory where PDF documents will be saved"
-msgstr "Dateipfad in dem die PDF-Dokumente abgelegt werden"
+msgstr "Sökväg till en katalog där PDF dokument kommer sparas"
 
 #: forms.py:23
 msgid "Security options"
-msgstr "Sicherheitseinstellungen"
+msgstr "Säkerhetsinställningar"
 
 #: forms.py:26
 msgid "Delete documents after the first download"
-msgstr "Lösche Dokumente nach dem ersten Download"
+msgstr "Radera dokument efter första nedladdning"
 
 #: forms.py:29
 msgid ""
 "Automatically delete a document just after its first download from this "
 "interface"
-msgstr ""
-"Löscht automatisch das Dokument, wenn es das erste Mal über dieses "
-"Oberfläche heruntergeladen wurde"
+msgstr "Radera dokument automatiskt efter första nedladdningen"
 
 #: forms.py:35
 msgid "Generate documents only at account creation"
-msgstr "Erzeuge Dokumente nur wenn ein Konto angelegt wurde"
+msgstr "Generera dokument endast vid kontoskapande"
 
 #: forms.py:38
 msgid ""
 "Generate a new document only when a new account is created. If set to no, a "
 "new document will be created each time a password is updated."
-msgstr ""
-"Erzeuge ein neues Dokument nur wenn ein neues Konto erstellt wurde. Wenn die "
-"Option auf Nein steht wird jedes Mal ein neues Dokument erstellt, wenn ein "
-"Passwort aktualisiert wurde."
+msgstr "Generera bara nya dokument när ett nytt konto skapas. Om detta sätts till nej, kommer ett nytt dokument skapas varje gång ett lösenord uppdateras."
 
 #: handlers.py:46
 msgid "Retrieve user's credentials as a PDF document"
-msgstr "Erhalte die Anmeldeinformationen des Benutzer als ein PDF-Dokument"
+msgstr "Hämta användares kontouppgifter som ett PDF dokument"
 
 #: lib.py:26
 #, python-format
 msgid "Failed to create the directory that will contain PDF documents (%s)"
-msgstr ""
-"Ein Fehler ist bei der Erstellung des Pfades, der die PDF Dokumente (%s) "
-"enthält, aufgetreten. "
+msgstr "Kunde inte skapa katalogen som innehåller PDF dokumenten (%s)"
 
 #: modo_extension.py:16 modo_extension.py:24
 msgid "PDF credentials"
-msgstr "PDF Anmeldeinformationen"
+msgstr "PDF kontouppgifter"
 
 #: modo_extension.py:19
 msgid "Generate PDF documents containing users' credentials"
-msgstr "Erzeuge PDF-Dokumente welche die Benutzeranmeldeinformationen enthält"
+msgstr "Generera PDF dokument innehållande användares kontouppgifter"
 
 #: views.py:30
 msgid "No document available for this user"
-msgstr "Kein Dokument für diesen Benutzer verfügbar"
+msgstr "Inga dokument tillgängliga för den här användaren"
