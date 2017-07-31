@@ -5,9 +5,11 @@ import os
 import random
 import struct
 
-from Crypto.Cipher import AES
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.backends import default_backend
 
 from django.conf import settings
+from django.utils.encoding import force_bytes
 from django.utils.translation import ugettext as _
 
 from modoboa.lib.exceptions import InternalError
@@ -45,11 +47,22 @@ def delete_credentials(account):
         pass
 
 
+def _get_cipher(iv):
+    """Return ready-to-user Cipher."""
+    key = param_tools.get_global_parameter("secret_key", app="core")
+    backend = default_backend()
+    return Cipher(
+        algorithms.AES(force_bytes(key)),
+        modes.CBC(force_bytes(iv)),
+        backend=backend
+    )
+
+
 def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
     """Crypt content and save it to a file."""
-    key = param_tools.get_global_parameter("secret_key", app="core")
     iv = "".join(chr(random.randint(0, 0xFF)) for i in range(16))
-    encryptor = AES.new(key, AES.MODE_CBC, iv)
+    cipher = _get_cipher(iv)
+    encryptor = cipher.encryptor()
     with open(filename, 'wb') as fp:
         fp.write(struct.pack('<Q', length))
         fp.write(iv)
@@ -59,22 +72,23 @@ def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
                 break
             elif len(chunk) % 16:
                 chunk += ' ' * (16 - len(chunk) % 16)
-            fp.write(encryptor.encrypt(chunk))
+            fp.write(
+                encryptor.update(force_bytes(chunk)) + encryptor.finalize())
 
 
 def decrypt_file(filename, chunksize=24*1024):
     """Decrypt the content of a file and return it."""
     buff = BytesIO()
-    key = param_tools.get_global_parameter("secret_key", app="core")
     with open(filename, 'rb') as fp:
         origsize = struct.unpack('<Q', fp.read(struct.calcsize('Q')))[0]
         iv = fp.read(16)
-        decryptor = AES.new(key, AES.MODE_CBC, iv)
+        cipher = _get_cipher(iv)
+        decryptor = cipher.decryptor()
         while True:
             chunk = fp.read(chunksize)
             if not len(chunk):
                 break
-            buff.write(decryptor.decrypt(chunk))
+            buff.write(decryptor.update(chunk) + decryptor.finalize())
         buff.truncate(origsize)
     return buff.getvalue()
 
