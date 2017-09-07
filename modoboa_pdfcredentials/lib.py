@@ -88,7 +88,8 @@ def decrypt_file(filename, chunksize=24*1024):
             chunk = fp.read(chunksize)
             if not len(chunk):
                 break
-            buff.write(decryptor.update(chunk) + decryptor.finalize())
+            buff.write(decryptor.update(chunk))
+        buff.write(decryptor.finalize())
         buff.truncate(origsize)
     return buff.getvalue()
 
