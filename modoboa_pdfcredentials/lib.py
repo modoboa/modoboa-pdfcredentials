@@ -58,29 +58,29 @@ def _get_cipher(iv):
     )
 
 
-def crypt_and_save_to_file(content, filename, length, chunksize=64*1024):
+def crypt_and_save_to_file(content, filename, length, chunksize=64*512):
     """Crypt content and save it to a file."""
     iv = "".join(chr(random.randint(0, 0xFF)) for i in range(16))
     cipher = _get_cipher(iv)
     encryptor = cipher.encryptor()
-    with open(filename, 'wb') as fp:
-        fp.write(struct.pack('<Q', length))
+    with open(filename, "wb") as fp:
+        fp.write(struct.pack("<Q", length))
         fp.write(iv)
         while True:
             chunk = content.read(chunksize)
             if not len(chunk):
                 break
             elif len(chunk) % 16:
-                chunk += ' ' * (16 - len(chunk) % 16)
-            fp.write(
-                encryptor.update(force_bytes(chunk)) + encryptor.finalize())
+                chunk += " " * (16 - len(chunk) % 16)
+            fp.write(encryptor.update(force_bytes(chunk)))
+        fp.write(encryptor.finalize())
 
 
 def decrypt_file(filename, chunksize=24*1024):
     """Decrypt the content of a file and return it."""
     buff = BytesIO()
-    with open(filename, 'rb') as fp:
-        origsize = struct.unpack('<Q', fp.read(struct.calcsize('Q')))[0]
+    with open(filename, "rb") as fp:
+        origsize = struct.unpack("<Q", fp.read(struct.calcsize("Q")))[0]
         iv = fp.read(16)
         cipher = _get_cipher(iv)
         decryptor = cipher.decryptor()
