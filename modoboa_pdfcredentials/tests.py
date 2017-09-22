@@ -30,8 +30,8 @@ class EventsTestCase(ModoTestCase):
         """Reset test env."""
         shutil.rmtree(self.workdir)
 
-    def test_account_created(self):
-        """Check that document is generated at account creation."""
+    def test_password_updated(self):
+        """Check that document is generated at account creation/update."""
         values = {
             "username": "leon@test.com",
             "first_name": "Tester", "last_name": "Toto",
@@ -52,4 +52,35 @@ class EventsTestCase(ModoTestCase):
         self.assertEqual(response["Content-Type"], "application/pdf")
 
         # File have been deleted?
+        self.assertFalse(os.path.exists(fname))
+
+        # Update account
+        values.update({"language": "en"})
+        self.ajax_post(
+            reverse("admin:account_change", args=[account.pk]), values
+        )
+        self.assertFalse(os.path.exists(fname))
+
+        self.set_global_parameter("generate_at_creation", False)
+        self.ajax_post(
+            reverse("admin:account_change", args=[account.pk]), values
+        )
+        self.assertTrue(os.path.exists(fname))
+
+    def test_account_delete(self):
+        """Check that document is deleted with account."""
+        values = {
+            "username": "leon@test.com",
+            "first_name": "Tester", "last_name": "Toto",
+            "role": "SimpleUsers", "quota_act": True,
+            "is_active": True, "email": "leon@test.com",
+            "random_password": True, "stepid": 2
+        }
+        self.ajax_post(reverse("admin:account_add"), values)
+        fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
+        self.assertTrue(os.path.exists(fname))
+        account = core_models.User.objects.get(username=values["username"])
+        self.ajax_post(
+            reverse("admin:account_delete", args=[account.pk]), {}
+        )
         self.assertFalse(os.path.exists(fname))
