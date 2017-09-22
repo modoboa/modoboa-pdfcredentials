@@ -44,6 +44,10 @@ class EventsTestCase(ModoTestCase):
         self.assertTrue(os.path.exists(fname))
         account = core_models.User.objects.get(username=values["username"])
 
+        # Check if link is present in listing page
+        response = self.ajax_get(reverse("admin:_identity_list"))
+        self.assertIn('name="get_credentials"', response["rows"])
+
         # Try to download the file
         response = self.client.get(
             reverse("modoboa_pdfcredentials:account_credentials",
