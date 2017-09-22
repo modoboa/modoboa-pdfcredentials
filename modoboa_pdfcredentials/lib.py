@@ -1,5 +1,7 @@
 """Internal library."""
 
+from __future__ import unicode_literals
+
 from io import BytesIO
 import os
 import random
@@ -53,14 +55,14 @@ def _get_cipher(iv):
     backend = default_backend()
     return Cipher(
         algorithms.AES(force_bytes(key)),
-        modes.CBC(force_bytes(iv)),
+        modes.CBC(iv),
         backend=backend
     )
 
 
 def crypt_and_save_to_file(content, filename, length, chunksize=64*512):
     """Crypt content and save it to a file."""
-    iv = "".join(chr(random.randint(0, 0xFF)) for i in range(16))
+    iv = os.urandom(16)
     cipher = _get_cipher(iv)
     encryptor = cipher.encryptor()
     with open(filename, "wb") as fp:
@@ -71,7 +73,7 @@ def crypt_and_save_to_file(content, filename, length, chunksize=64*512):
             if not len(chunk):
                 break
             elif len(chunk) % 16:
-                chunk += " " * (16 - len(chunk) % 16)
+                chunk += b" " * (16 - len(chunk) % 16)
             fp.write(encryptor.update(force_bytes(chunk)))
         fp.write(encryptor.finalize())
 
