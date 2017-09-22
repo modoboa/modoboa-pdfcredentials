@@ -5,6 +5,7 @@ import shutil
 import tempfile
 
 from modoboa.admin import factories as admin_factories
+from modoboa.core import models as core_models
 from django.core.urlresolvers import reverse
 
 from modoboa.lib.tests import ModoTestCase
@@ -41,3 +42,14 @@ class EventsTestCase(ModoTestCase):
         self.ajax_post(reverse("admin:account_add"), values)
         fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
         self.assertTrue(os.path.exists(fname))
+        account = core_models.User.objects.get(username=values["username"])
+
+        # Try to download the file
+        response = self.client.get(
+            reverse("modoboa_pdfcredentials:account_credentials",
+                    args=[account.pk]))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response["Content-Type"], "application/pdf")
+
+        # File have been deleted?
+        self.assertFalse(os.path.exists(fname))
