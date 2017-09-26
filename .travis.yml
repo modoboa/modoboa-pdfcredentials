@@ -34,3 +34,15 @@ script:
 
 after_success:
   - codecov
+
+before_deploy:
+  - cd ../modoboa_pdfcredentials
+  - django-admin compilemessages
+
+deploy:
+  provider: pypi
+  user: tonio
+  password:
+    secure: OXLFdbuNjI/P1g+imXCLmskRTEMLvx3LqkT6NDESXKOEU7yxApfugM4LonjrNEC44HjAGtywNlAxHsUjpv4iDoZe7zVpRBVUSANgk8fiW+r0QK56bGlKG7RYIhdgZPycKtbWbmuffuRs+QiPsyqAGvuCMs9MsbFkZDtEmOdf4jw=
+  on:
+    tags: true
