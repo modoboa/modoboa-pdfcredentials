@@ -1,7 +1,6 @@
 """The code used to generate PDF files (based on Reportlab."""
 
 from io import BytesIO
-import os
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
@@ -15,9 +14,8 @@ from reportlab.platypus import (
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
 from django.utils.translation import ugettext as _
-from django.conf import settings
 
-from django.contrib.sites.models import Site
+from modoboa.parameters import tools as param_tools
 
 from . import lib
 
@@ -46,26 +44,35 @@ def credentials(account, password):
                             styles["Footer"])]
         Frame(0, 0, 21 * cm, 4 * cm).addFromList(footer, canvas)
 
+    conf = dict(
+        param_tools.get_global_parameters("modoboa_pdfcredentials"))
     filename = lib.get_creds_filename(account)
     buff = BytesIO()
     doc = SimpleDocTemplate(buff, pagesize=A4)
     story = []
     story.append(resized_image(lib.get_document_logo(), 6*cm))
     story.append(Spacer(1, 1 * cm))
-    story.append(Paragraph(_("Personal account information"), styles["Title"]))
+    story.append(Paragraph(conf["title"], styles["Title"]))
     story.append(Spacer(1, 2 * cm))
     story.append(Paragraph(_("""
 Dear %s, this document contains the credentials you will need
 to connect to Modoboa. Learn the content and destroy
 the document as soon as possible.
 """) % account.fullname, styles["Normal"]))
-    url = "http(s)://{}{}".format(
-        Site.objects.get_current().domain, settings.LOGIN_URL)
     data = [
-        ["URL", url],
+        ["URL", conf["webpanel_url"]],
         [_("Username"), account.username],
         [_("Password"), password]
     ]
+    if conf["include_connection_settings"]:
+        data += [
+            [_("SMTP server address"), conf["smtp_server_address"]],
+            [_("SMTP server port"), conf["smtp_server_port"]],
+            [_("SMTP connection security"), conf["smtp_connection_security"]],
+            [_("IMAP server address"), conf["imap_server_address"]],
+            [_("IMAP server port"), conf["imap_server_port"]],
+            [_("IMAP connection security"), conf["imap_connection_security"]],
+        ]
     table = Table(data)
     table.setStyle(TableStyle([
         ('GRID', (0, 0), (-1, -1), 1, colors.black),

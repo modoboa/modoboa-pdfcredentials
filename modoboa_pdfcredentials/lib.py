@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 
 from io import BytesIO
 import os
-import random
 import struct
 
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
@@ -43,10 +42,7 @@ def delete_credentials(account):
     fname = get_creds_filename(account)
     if not os.path.exists(fname):
         return
-    try:
-        os.remove(fname)
-    except OSError:
-        pass
+    os.remove(fname)
 
 
 def _get_cipher(iv):

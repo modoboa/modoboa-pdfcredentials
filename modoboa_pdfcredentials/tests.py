@@ -4,9 +4,11 @@ import os
 import shutil
 import tempfile
 
+from django.test import override_settings
+from django.core.urlresolvers import reverse
+
 from modoboa.admin import factories as admin_factories
 from modoboa.core import models as core_models
-from django.core.urlresolvers import reverse
 
 from modoboa.lib.tests import ModoTestCase
 
@@ -30,16 +32,24 @@ class EventsTestCase(ModoTestCase):
         """Reset test env."""
         shutil.rmtree(self.workdir)
 
-    def test_password_updated(self):
-        """Check that document is generated at account creation/update."""
+    def _create_account(self, username, expected_status=200):
+        """Create a test account."""
         values = {
-            "username": "leon@test.com",
+            "username": username,
             "first_name": "Tester", "last_name": "Toto",
             "role": "SimpleUsers", "quota_act": True,
-            "is_active": True, "email": "leon@test.com",
+            "is_active": True, "email": username,
             "random_password": True, "stepid": 2
         }
-        self.ajax_post(reverse("admin:account_add"), values)
+        response = self.client.post(
+            reverse("admin:account_add"), values,
+            HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertEqual(response.status_code, expected_status)
+        return values
+
+    def test_password_updated(self):
+        """Check that document is generated at account creation/update."""
+        values = self._create_account("leon@test.com")
         fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
         self.assertTrue(os.path.exists(fname))
         account = core_models.User.objects.get(username=values["username"])
@@ -58,6 +68,12 @@ class EventsTestCase(ModoTestCase):
         # File have been deleted?
         self.assertFalse(os.path.exists(fname))
 
+        # Try to download a second time
+        response = self.client.get(
+            reverse("modoboa_pdfcredentials:account_credentials",
+                    args=[account.pk]))
+        self.assertContains(response, "No document available for this user")
+
         # Update account
         values.update({"language": "en"})
         self.ajax_post(
@@ -71,16 +87,16 @@ class EventsTestCase(ModoTestCase):
         )
         self.assertTrue(os.path.exists(fname))
 
+    def test_with_connection_settings(self):
+        """Add connection settings to documents."""
+        self.set_global_parameter("include_connection_settings", True)
+        values = self._create_account("leon@test.com")
+        fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
+        self.assertTrue(os.path.exists(fname))
+
     def test_account_delete(self):
         """Check that document is deleted with account."""
-        values = {
-            "username": "leon@test.com",
-            "first_name": "Tester", "last_name": "Toto",
-            "role": "SimpleUsers", "quota_act": True,
-            "is_active": True, "email": "leon@test.com",
-            "random_password": True, "stepid": 2
-        }
-        self.ajax_post(reverse("admin:account_add"), values)
+        values = self._create_account("leon@test.com")
         fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
         self.assertTrue(os.path.exists(fname))
         account = core_models.User.objects.get(username=values["username"])
@@ -88,3 +104,37 @@ class EventsTestCase(ModoTestCase):
             reverse("admin:account_delete", args=[account.pk]), {}
         )
         self.assertFalse(os.path.exists(fname))
+
+    @override_settings(MODOBOA_LOGO="modoboa.png")
+    def test_with_custom_logo(self):
+        """Check that document is deleted with account."""
+        values = self._create_account("leon@test.com")
+        fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
+        self.assertTrue(os.path.exists(fname))
+
+    def test_download_and_delete_account(self):
+        """Check that document is deleted with account."""
+        values = self._create_account("leon@test.com")
+        fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
+        self.assertTrue(os.path.exists(fname))
+        account = core_models.User.objects.get(username=values["username"])
+
+        # Try to download the file
+        response = self.client.get(
+            reverse("modoboa_pdfcredentials:account_credentials",
+                    args=[account.pk]))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response["Content-Type"], "application/pdf")
+
+        # File have been deleted?
+        self.assertFalse(os.path.exists(fname))
+
+        # Delete account
+        self.ajax_post(
+            reverse("admin:account_delete", args=[account.pk]), {}
+        )
+
+    def test_storage_dir_creation(self):
+        """Test storage directory creation."""
+        self.set_global_parameter("storage_dir", "/nonexistentdir")
+        self._create_account("leon@test.com", expected_status=500)

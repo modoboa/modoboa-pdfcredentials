@@ -1,10 +1,15 @@
 """PDF credentials forms."""
 
 from django import forms
+from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
+
+from django.contrib.sites import models as sites_models
 
 from modoboa.lib import form_utils
 from modoboa.parameters import forms as param_forms
+
+from . import constants
 
 
 class ParametersForm(param_forms.AdminParametersForm):
@@ -40,3 +45,79 @@ class ParametersForm(param_forms.AdminParametersForm):
             "password is updated."
         )
     )
+
+    customization = form_utils.SeparatorField(label=_("Customization options"))
+
+    title = forms.CharField(
+        label=_("Title"),
+        initial=_("Personal account information"),
+        help_text=_("The document's title")
+    )
+
+    webpanel_url = forms.URLField(
+        label=_("Web console url"),
+        help_text=_("URL of the Modoboa web panel")
+    )
+
+    include_connection_settings = form_utils.YesNoField(
+        label=_("Include mail client connection settings"),
+        initial=False,
+        help_text=_(
+            "Include required SMTP and IMAP connection information to "
+            "configure a mail client"
+        )
+    )
+
+    smtp_server_address = forms.CharField(
+        label=_("SMTP server address"),
+        help_text=_("Address of the SMTP server (hostname or IP)")
+    )
+
+    smtp_server_port = forms.IntegerField(
+        label=_("SMTP server port"),
+        initial=587,
+        help_text=_("Port of the SMTP server")
+    )
+
+    smtp_connection_security = forms.ChoiceField(
+        label=_("SMTP connection security"),
+        choices=constants.CONNECTION_SECURITY_MODES,
+        initial="starttls",
+        help_text=_("Connection security mechanism")
+    )
+
+    imap_server_address = forms.CharField(
+        label=_("IMAP server address"),
+        help_text=_("Address of the IMAP server (hostname or IP)")
+    )
+
+    imap_server_port = forms.IntegerField(
+        label=_("IMAP server port"),
+        initial=143,
+        help_text=_("Port of the IMAP server")
+    )
+
+    imap_connection_security = forms.ChoiceField(
+        label=_("IMAP connection security"),
+        choices=constants.CONNECTION_SECURITY_MODES,
+        initial="starttls",
+        help_text=_("Connection security mechanism")
+    )
+
+    visibility_rules = {
+        "smtp_server_address": "include_connection_settings=True",
+        "smtp_server_port": "include_connection_settings=True",
+        "smtp_connection_security": "include_connection_settings=True",
+        "imap_server_address": "include_connection_settings=True",
+        "imap_server_port": "include_connection_settings=True",
+        "imap_connection_security": "include_connection_settings=True",
+    }
+
+    def __init__(self, *args, **kwargs):
+        """Set initial values."""
+        super(ParametersForm, self).__init__(*args, **kwargs)
+        hostname = sites_models.Site.objects.get_current().domain
+        url = "https://{}{}".format(hostname, settings.LOGIN_URL)
+        self.fields["webpanel_url"].initial = url
+        self.fields["smtp_server_address"].initial = hostname
+        self.fields["imap_server_address"].initial = hostname
