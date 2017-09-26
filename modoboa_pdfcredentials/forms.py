@@ -55,7 +55,7 @@ class ParametersForm(param_forms.AdminParametersForm):
     )
 
     webpanel_url = forms.URLField(
-        label=_("Web console url"),
+        label=_("Web panel url"),
         help_text=_("URL of the Modoboa web panel")
     )
 

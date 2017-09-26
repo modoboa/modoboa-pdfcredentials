@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Modoboa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-03 09:08+0100\n"
+"POT-Creation-Date: 2017-09-26 18:13+0200\n"
 "PO-Revision-Date: 2015-07-11 11:16+0000\n"
 "Last-Translator: controlc.de\n"
 "Language-Team: German (http://www.transifex.com/tonio/modoboa/language/de/)\n"
@@ -18,11 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: documents.py:42 documents.py:55
+#: constants.py:7
+msgid "None"
+msgstr ""
+
+#: documents.py:40 forms.py:53
 msgid "Personal account information"
 msgstr "Persönliche Kontoinformationen"
 
-#: documents.py:45
+#: documents.py:43
 msgid "Powered by Modoboa - Mail hosting made simple"
 msgstr "Powered by Modoboa - Mail hosting made simple"
 
@@ -39,35 +43,59 @@ msgstr ""
 "benötigst um Dich mit Modoboa zu verbinden. Präge Dir bitte die "
 "Informationen ein und lösche anschliessend dieses Dokument.\n"
 
-#: documents.py:66
+#: documents.py:64
 msgid "Username"
 msgstr "Benutzername"
 
-#: documents.py:67
+#: documents.py:65
 msgid "Password"
 msgstr "Passwort"
 
-#: forms.py:15
+#: documents.py:69 forms.py:72
+msgid "SMTP server address"
+msgstr ""
+
+#: documents.py:70 forms.py:77
+msgid "SMTP server port"
+msgstr ""
+
+#: documents.py:71 forms.py:83
+msgid "SMTP connection security"
+msgstr ""
+
+#: documents.py:72 forms.py:90
+msgid "IMAP server address"
+msgstr ""
+
+#: documents.py:73 forms.py:95
+msgid "IMAP server port"
+msgstr ""
+
+#: documents.py:74 forms.py:101
+msgid "IMAP connection security"
+msgstr ""
+
+#: forms.py:20
 msgid "Documents storage"
 msgstr "Dokumentenablage"
 
-#: forms.py:18
+#: forms.py:23
 msgid "Directory to save documents into"
 msgstr "Speicherpfad für Dokumente"
 
-#: forms.py:20
+#: forms.py:25
 msgid "Path to a directory where PDF documents will be saved"
 msgstr "Dateipfad in dem die PDF-Dokumente abgelegt werden"
 
-#: forms.py:23
+#: forms.py:28
 msgid "Security options"
 msgstr "Sicherheitseinstellungen"
 
-#: forms.py:26
+#: forms.py:31
 msgid "Delete documents after the first download"
 msgstr "Lösche Dokumente nach dem ersten Download"
 
-#: forms.py:29
+#: forms.py:34
 msgid ""
 "Automatically delete a document just after its first download from this "
 "interface"
@@ -75,11 +103,11 @@ msgstr ""
 "Löscht automatisch das Dokument, wenn es das erste Mal über dieses "
 "Oberfläche heruntergeladen wurde"
 
-#: forms.py:35
+#: forms.py:40
 msgid "Generate documents only at account creation"
 msgstr "Erzeuge Dokumente nur wenn ein Konto angelegt wurde"
 
-#: forms.py:38
+#: forms.py:43
 msgid ""
 "Generate a new document only when a new account is created. If set to no, a "
 "new document will be created each time a password is updated."
@@ -88,11 +116,61 @@ msgstr ""
 "Option auf Nein steht wird jedes Mal ein neues Dokument erstellt, wenn ein "
 "Passwort aktualisiert wurde."
 
+#: forms.py:49
+msgid "Customization options"
+msgstr ""
+
+#: forms.py:52
+msgid "Title"
+msgstr ""
+
+#: forms.py:54
+msgid "The document's title"
+msgstr ""
+
+#: forms.py:58
+msgid "Web panel url"
+msgstr ""
+
+#: forms.py:59
+msgid "URL of the Modoboa web panel"
+msgstr ""
+
+#: forms.py:63
+msgid "Include mail client connection settings"
+msgstr ""
+
+#: forms.py:66
+msgid ""
+"Include required SMTP and IMAP connection information to configure a mail "
+"client"
+msgstr ""
+
+#: forms.py:73
+msgid "Address of the SMTP server (hostname or IP)"
+msgstr ""
+
+#: forms.py:79
+msgid "Port of the SMTP server"
+msgstr ""
+
+#: forms.py:86 forms.py:104
+msgid "Connection security mechanism"
+msgstr ""
+
+#: forms.py:91
+msgid "Address of the IMAP server (hostname or IP)"
+msgstr ""
+
+#: forms.py:97
+msgid "Port of the IMAP server"
+msgstr ""
+
 #: handlers.py:46
 msgid "Retrieve user's credentials as a PDF document"
 msgstr "Erhalte die Anmeldeinformationen des Benutzer als ein PDF-Dokument"
 
-#: lib.py:26
+#: lib.py:29
 #, python-format
 msgid "Failed to create the directory that will contain PDF documents (%s)"
 msgstr ""
