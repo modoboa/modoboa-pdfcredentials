@@ -94,6 +94,13 @@ class EventsTestCase(ModoTestCase):
         fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
         self.assertTrue(os.path.exists(fname))
 
+    def test_with_custom_message(self):
+        """Add custom message to documents."""
+        self.set_global_parameter("custom_message", "This is a test message.")
+        values = self._create_account("leon@test.com")
+        fname = os.path.join(self.workdir, "{}.pdf".format(values["username"]))
+        self.assertTrue(os.path.exists(fname))
+
     def test_account_delete(self):
         """Check that document is deleted with account."""
         values = self._create_account("leon@test.com")

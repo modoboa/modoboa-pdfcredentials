@@ -59,12 +59,19 @@ class ParametersForm(param_forms.AdminParametersForm):
         help_text=_("URL of the Modoboa web panel")
     )
 
+    custom_message = forms.CharField(
+        label=_("Custom message"),
+        help_text=_(
+            "A custom message that will appear at the end of documents"),
+        required=False
+    )
+
     include_connection_settings = form_utils.YesNoField(
         label=_("Include mail client connection settings"),
         initial=False,
         help_text=_(
             "Include required SMTP and IMAP connection information to "
-            "configure a mail client"
+            "configure a mail client, a table or a phone"
         )
     )
 
@@ -76,7 +83,7 @@ class ParametersForm(param_forms.AdminParametersForm):
     smtp_server_port = forms.IntegerField(
         label=_("SMTP server port"),
         initial=587,
-        help_text=_("Port of the SMTP server")
+        help_text=_("Listening port of the SMTP server")
     )
 
     smtp_connection_security = forms.ChoiceField(
@@ -94,7 +101,7 @@ class ParametersForm(param_forms.AdminParametersForm):
     imap_server_port = forms.IntegerField(
         label=_("IMAP server port"),
         initial=143,
-        help_text=_("Port of the IMAP server")
+        help_text=_("Listening port of the IMAP server")
     )
 
     imap_connection_security = forms.ChoiceField(
