@@ -2,6 +2,7 @@
 
 from django import forms
 from django.conf import settings
+from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
 from django.contrib.sites import models as sites_models
@@ -120,11 +121,18 @@ class ParametersForm(param_forms.AdminParametersForm):
         "imap_connection_security": "include_connection_settings=True",
     }
 
+    @cached_property
+    def hostname(self):
+        """Return local hostname."""
+        return sites_models.Site.objects.get_current().domain
+
     def __init__(self, *args, **kwargs):
         """Set initial values."""
         super(ParametersForm, self).__init__(*args, **kwargs)
-        hostname = sites_models.Site.objects.get_current().domain
-        url = "https://{}{}".format(hostname, settings.LOGIN_URL)
-        self.fields["webpanel_url"].initial = url
-        self.fields["smtp_server_address"].initial = hostname
-        self.fields["imap_server_address"].initial = hostname
+        if not self.fields["webpanel_url"].initial:
+            url = "https://{}{}".format(self.hostname, settings.LOGIN_URL)
+            self.fields["webpanel_url"].initial = url
+        if not self.fields["smtp_server_address"].initial:
+            self.fields["smtp_server_address"].initial = self.hostname
+        if not self.fields["imap_server_address"].initial:
+            self.fields["imap_server_address"].initial = self.hostname
