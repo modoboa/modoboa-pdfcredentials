@@ -62,7 +62,7 @@ def crypt_and_save_to_file(content, filename, length, chunksize=64*512):
     cipher = _get_cipher(iv)
     encryptor = cipher.encryptor()
     with open(filename, "wb") as fp:
-        fp.write(struct.pack("<Q", length))
+        fp.write(struct.pack(b"<Q", length))
         fp.write(iv)
         while True:
             chunk = content.read(chunksize)
@@ -78,7 +78,7 @@ def decrypt_file(filename, chunksize=24*1024):
     """Decrypt the content of a file and return it."""
     buff = BytesIO()
     with open(filename, "rb") as fp:
-        origsize = struct.unpack("<Q", fp.read(struct.calcsize("Q")))[0]
+        origsize = struct.unpack(b"<Q", fp.read(struct.calcsize(b"Q")))[0]
         iv = fp.read(16)
         cipher = _get_cipher(iv)
         decryptor = cipher.decryptor()
