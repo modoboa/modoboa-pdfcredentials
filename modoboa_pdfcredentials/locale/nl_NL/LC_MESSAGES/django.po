@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Modoboa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-26 18:13+0200\n"
+"POT-Creation-Date: 2017-09-27 12:01+0200\n"
 "PO-Revision-Date: 2016-11-25 23:55+0000\n"
 "Last-Translator: R Kloosterman <randx@zeelandnet.nl>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/tonio/modoboa/"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: documents.py:40 forms.py:53
+#: documents.py:52 forms.py:53
 msgid "Personal account information"
 msgstr "Persoonlijke account informatie"
 
-#: documents.py:43
+#: documents.py:55
 msgid "Powered by Modoboa - Mail hosting made simple"
 msgstr "Aangeboden door Modoboa - Mail hosting made simple"
 
-#: documents.py:57
+#: documents.py:69
 #, python-format
 msgid ""
 "\n"
@@ -44,36 +44,59 @@ msgstr ""
 "heeft voor het gebruiken van Modoboa. Onthoud deze gegevens\n"
 "en verwijder dit document zo snel mogelijk.\n"
 
-#: documents.py:64
+#: documents.py:75
+msgid "Web panel:"
+msgstr ""
+
+#: documents.py:78
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: documents.py:65
+#: documents.py:79
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: documents.py:69 forms.py:72
+#: documents.py:89
+msgid ""
+"\n"
+"Here you can view your emails anytime online, create filters or manage\n"
+"your contacts.\n"
+msgstr ""
+
+#: documents.py:96
+msgid "Please change your password!"
+msgstr ""
+
+#: documents.py:102
+msgid "PC/Tablet/Smartphone configuration:"
+msgstr ""
+
+#: documents.py:105 forms.py:79
 msgid "SMTP server address"
 msgstr ""
 
-#: documents.py:70 forms.py:77
+#: documents.py:106 forms.py:84
 msgid "SMTP server port"
 msgstr ""
 
-#: documents.py:71 forms.py:83
+#: documents.py:107 forms.py:90
 msgid "SMTP connection security"
 msgstr ""
 
-#: documents.py:72 forms.py:90
+#: documents.py:108 forms.py:97
 msgid "IMAP server address"
 msgstr ""
 
-#: documents.py:73 forms.py:95
+#: documents.py:109 forms.py:102
 msgid "IMAP server port"
 msgstr ""
 
-#: documents.py:74 forms.py:101
+#: documents.py:110 forms.py:108
 msgid "IMAP connection security"
+msgstr ""
+
+#: documents.py:120
+msgid "Use those settings for your computer, tablet or phone."
 msgstr ""
 
 #: forms.py:20
@@ -138,33 +161,41 @@ msgid "URL of the Modoboa web panel"
 msgstr ""
 
 #: forms.py:63
+msgid "Custom message"
+msgstr ""
+
+#: forms.py:65
+msgid "A custom message that will appear at the end of documents"
+msgstr ""
+
+#: forms.py:70
 msgid "Include mail client connection settings"
 msgstr ""
 
-#: forms.py:66
+#: forms.py:73
 msgid ""
 "Include required SMTP and IMAP connection information to configure a mail "
-"client"
+"client, a tablet or a phone"
 msgstr ""
 
-#: forms.py:73
+#: forms.py:80
 msgid "Address of the SMTP server (hostname or IP)"
 msgstr ""
 
-#: forms.py:79
-msgid "Port of the SMTP server"
+#: forms.py:86
+msgid "Listening port of the SMTP server"
 msgstr ""
 
-#: forms.py:86 forms.py:104
+#: forms.py:93 forms.py:111
 msgid "Connection security mechanism"
 msgstr ""
 
-#: forms.py:91
+#: forms.py:98
 msgid "Address of the IMAP server (hostname or IP)"
 msgstr ""
 
-#: forms.py:97
-msgid "Port of the IMAP server"
+#: forms.py:104
+msgid "Listening port of the IMAP server"
 msgstr ""
 
 #: handlers.py:46

@@ -71,7 +71,7 @@ class ParametersForm(param_forms.AdminParametersForm):
         initial=False,
         help_text=_(
             "Include required SMTP and IMAP connection information to "
-            "configure a mail client, a table or a phone"
+            "configure a mail client, a tablet or a phone"
         )
     )
 
