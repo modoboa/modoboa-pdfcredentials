@@ -1,6 +1,6 @@
 """Generate PDF documents containg account credentials."""
 
-from django.utils.translation import ugettext_lazy, ugettext as _
+from django.utils.translation import ugettext_lazy
 
 from modoboa.core.extensions import ModoExtension, exts_pool
 from modoboa.parameters import tools as param_tools
@@ -21,6 +21,7 @@ class PdfCredentials(ModoExtension):
 
     def load(self):
         param_tools.registry.add(
-            "global", forms.ParametersForm, _("PDF credentials"))
+            "global", forms.ParametersForm, ugettext_lazy("PDF credentials"))
+
 
 exts_pool.register_extension(PdfCredentials)
