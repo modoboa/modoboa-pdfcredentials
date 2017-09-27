@@ -38,6 +38,7 @@ after_success:
 before_deploy:
   - cd ../modoboa_pdfcredentials
   - django-admin compilemessages
+  - cd ..
 
 deploy:
   provider: pypi
