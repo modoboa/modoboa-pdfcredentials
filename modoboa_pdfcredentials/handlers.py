@@ -2,7 +2,7 @@
 
 import os
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models import signals
 from django.dispatch import receiver
 from django.utils.translation import ugettext as _
