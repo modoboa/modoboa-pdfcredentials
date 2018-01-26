@@ -10,7 +10,7 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 
 from django.conf import settings
-from django.utils.encoding import force_bytes
+from django.utils.encoding import force_bytes, smart_bytes
 from django.utils.translation import ugettext as _
 
 from modoboa.lib.exceptions import InternalError
@@ -47,7 +47,7 @@ def delete_credentials(account):
 
 def _get_cipher(iv):
     """Return ready-to-user Cipher."""
-    key = param_tools.get_global_parameter("secret_key", app="core")
+    key = smart_bytes(settings.SECRET_KEY[:32])
     backend = default_backend()
     return Cipher(
         algorithms.AES(force_bytes(key)),
