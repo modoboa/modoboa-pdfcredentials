@@ -1,2 +1,2 @@
-modoboa>=1.10.0
+modoboa>=1.10.1
 reportlab
