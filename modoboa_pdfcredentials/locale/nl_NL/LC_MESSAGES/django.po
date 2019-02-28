@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # R Kloosterman <randx@zeelandnet.nl>, 2016
+# Tuxis Internet Engineering V.O.F. <info@tuxis.nl>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Modoboa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-27 12:01+0200\n"
-"PO-Revision-Date: 2016-11-25 23:55+0000\n"
-"Last-Translator: R Kloosterman <randx@zeelandnet.nl>\n"
-"Language-Team: Dutch (Netherlands) (http://www.transifex.com/tonio/modoboa/"
-"language/nl_NL/)\n"
-"Language: nl_NL\n"
+"PO-Revision-Date: 2018-01-31 08:43+0000\n"
+"Last-Translator: Tuxis Internet Engineering V.O.F. <info@tuxis.nl>\n"
+"Language-Team: Dutch (Netherlands) (http://www.transifex.com/tonio/modoboa/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: constants.py:7
@@ -38,15 +38,11 @@ msgid ""
 "Dear %s, this document contains the credentials you will need\n"
 "to connect to Modoboa. Learn the content and destroy\n"
 "the document as soon as possible.\n"
-msgstr ""
-"\n"
-"Beste %s, dit document bevat alle gegevens dat u nodig\n"
-"heeft voor het gebruiken van Modoboa. Onthoud deze gegevens\n"
-"en verwijder dit document zo snel mogelijk.\n"
+msgstr "\nBeste %s, dit document bevat alle gegevens dat u nodig\nheeft voor het gebruiken van Modoboa. Onthoud deze gegevens\nen verwijder dit document zo snel mogelijk.\n"
 
 #: documents.py:75
 msgid "Web panel:"
-msgstr ""
+msgstr "Webpaneel:"
 
 #: documents.py:78
 msgid "Username"
@@ -61,43 +57,43 @@ msgid ""
 "\n"
 "Here you can view your emails anytime online, create filters or manage\n"
 "your contacts.\n"
-msgstr ""
+msgstr "\nHier kunt u uw e-mails online bekijken, filters aanmaken, of contactpersonen beheren.\n"
 
 #: documents.py:96
 msgid "Please change your password!"
-msgstr ""
+msgstr "Wijzig uw wachtwoord aub!"
 
 #: documents.py:102
 msgid "PC/Tablet/Smartphone configuration:"
-msgstr ""
+msgstr "PC/Tablet/Smartphone configuratie:"
 
 #: documents.py:105 forms.py:79
 msgid "SMTP server address"
-msgstr ""
+msgstr "SMTP serveradres"
 
 #: documents.py:106 forms.py:84
 msgid "SMTP server port"
-msgstr ""
+msgstr "SMTP server poort"
 
 #: documents.py:107 forms.py:90
 msgid "SMTP connection security"
-msgstr ""
+msgstr "SMTP verbinding beveiliging"
 
 #: documents.py:108 forms.py:97
 msgid "IMAP server address"
-msgstr ""
+msgstr "IMAP serveradres"
 
 #: documents.py:109 forms.py:102
 msgid "IMAP server port"
-msgstr ""
+msgstr "IMAP server poort"
 
 #: documents.py:110 forms.py:108
 msgid "IMAP connection security"
-msgstr ""
+msgstr "IMAP verbinding beveiliging"
 
 #: documents.py:120
 msgid "Use those settings for your computer, tablet or phone."
-msgstr ""
+msgstr "Gebruik deze instellingen voor uw computer, tablet of telefoon."
 
 #: forms.py:20
 msgid "Documents storage"
@@ -123,9 +119,7 @@ msgstr "Documenten verwijderen na eerste download"
 msgid ""
 "Automatically delete a document just after its first download from this "
 "interface"
-msgstr ""
-"Verwijder een document automatisch nadat het eenmalig is gedownload van "
-"paneel"
+msgstr "Verwijder een document automatisch nadat het eenmalig is gedownload van paneel"
 
 #: forms.py:40
 msgid "Generate documents only at account creation"
@@ -135,38 +129,35 @@ msgstr "Genereer een document enkel bij het aanmaken van een account"
 msgid ""
 "Generate a new document only when a new account is created. If set to no, a "
 "new document will be created each time a password is updated."
-msgstr ""
-"Genereer een document enkel wanneer een account is nieuw aangemaakt. Indien "
-"'nee' is geselecteerd zal bij iedere wachtwoord wijziging een nieuw document "
-"worden gemaakt. "
+msgstr "Genereer een document enkel wanneer een account is nieuw aangemaakt. Indien 'nee' is geselecteerd zal bij iedere wachtwoord wijziging een nieuw document worden gemaakt. "
 
 #: forms.py:49
 msgid "Customization options"
-msgstr ""
+msgstr "Personaliseringsopties"
 
 #: forms.py:52
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: forms.py:54
 msgid "The document's title"
-msgstr ""
+msgstr "Titel van het document"
 
 #: forms.py:58
 msgid "Web panel url"
-msgstr ""
+msgstr "Webpaneel URL"
 
 #: forms.py:59
 msgid "URL of the Modoboa web panel"
-msgstr ""
+msgstr "URL van het Modoboa webpaneel"
 
 #: forms.py:63
 msgid "Custom message"
-msgstr ""
+msgstr "Aangepast bericht"
 
 #: forms.py:65
 msgid "A custom message that will appear at the end of documents"
-msgstr ""
+msgstr "Een aangepast bericht dat aan het einde van de documenten komt te staan"
 
 #: forms.py:70
 msgid "Include mail client connection settings"

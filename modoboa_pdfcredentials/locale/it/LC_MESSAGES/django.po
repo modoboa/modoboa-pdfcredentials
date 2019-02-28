@@ -1,27 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
+# marcotrevisan <mrctrevisan@yahoo.it>, 2018
 # Rocco <mors10@hotmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Modoboa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-27 12:01+0200\n"
-"PO-Revision-Date: 2015-10-11 12:01+0000\n"
-"Last-Translator: Rocco <mors10@hotmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/tonio/modoboa/language/"
-"it/)\n"
-"Language: it\n"
+"PO-Revision-Date: 2018-11-02 15:15+0000\n"
+"Last-Translator: marcotrevisan <mrctrevisan@yahoo.it>\n"
+"Language-Team: Italian (http://www.transifex.com/tonio/modoboa/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: constants.py:7
 msgid "None"
-msgstr ""
+msgstr "Nessun valore"
 
 #: documents.py:52 forms.py:53
 msgid "Personal account information"
@@ -38,15 +38,11 @@ msgid ""
 "Dear %s, this document contains the credentials you will need\n"
 "to connect to Modoboa. Learn the content and destroy\n"
 "the document as soon as possible.\n"
-msgstr ""
-"\n"
-"Gentile %s, questo documento contiene le credenziali di accesso \n"
-"per accedere a Modoboa. Leggilo e elimina\n"
-" il documento il prima possibile.\n"
+msgstr "\nGentile %s, questo documento contiene le credenziali di accesso \nper accedere a Modoboa. Leggilo e elimina\n il documento il prima possibile.\n"
 
 #: documents.py:75
 msgid "Web panel:"
-msgstr ""
+msgstr "Pannello web:"
 
 #: documents.py:78
 msgid "Username"
@@ -61,43 +57,43 @@ msgid ""
 "\n"
 "Here you can view your emails anytime online, create filters or manage\n"
 "your contacts.\n"
-msgstr ""
+msgstr "\nQui puoi sempre visualizzare le tue email onlime, creare filtri\no gestire i tuoi contatti.\n"
 
 #: documents.py:96
 msgid "Please change your password!"
-msgstr ""
+msgstr "Per favore cambia la tua password!"
 
 #: documents.py:102
 msgid "PC/Tablet/Smartphone configuration:"
-msgstr ""
+msgstr "Configurazione PC/Tablet/Smartphone:"
 
 #: documents.py:105 forms.py:79
 msgid "SMTP server address"
-msgstr ""
+msgstr "Indirizzo del server SMTP"
 
 #: documents.py:106 forms.py:84
 msgid "SMTP server port"
-msgstr ""
+msgstr "Porta del server SMTP"
 
 #: documents.py:107 forms.py:90
 msgid "SMTP connection security"
-msgstr ""
+msgstr "Sicurezza della connessione al server SMTP"
 
 #: documents.py:108 forms.py:97
 msgid "IMAP server address"
-msgstr ""
+msgstr "indirizzo del server IMAP"
 
 #: documents.py:109 forms.py:102
 msgid "IMAP server port"
-msgstr ""
+msgstr "Porta del server IMAP"
 
 #: documents.py:110 forms.py:108
 msgid "IMAP connection security"
-msgstr ""
+msgstr "Sicurezza della connessione al server IMAP"
 
 #: documents.py:120
 msgid "Use those settings for your computer, tablet or phone."
-msgstr ""
+msgstr "Utilizza quelle impostazioni per il tuo computer, tablet o telefono."
 
 #: forms.py:20
 msgid "Documents storage"
@@ -123,9 +119,7 @@ msgstr "Cancella i documenti dopo averli scaricati"
 msgid ""
 "Automatically delete a document just after its first download from this "
 "interface"
-msgstr ""
-"Elimina automaticamente il documento dopo che è stato scaricato da questa "
-"interfaccia"
+msgstr "Elimina automaticamente il documento dopo che è stato scaricato da questa interfaccia"
 
 #: forms.py:40
 msgid "Generate documents only at account creation"
@@ -135,68 +129,65 @@ msgstr "Genera documenti solo dopo la creazione dell'account"
 msgid ""
 "Generate a new document only when a new account is created. If set to no, a "
 "new document will be created each time a password is updated."
-msgstr ""
-"Generare un nuovo documento solo quando si crea un nuovo account. Se "
-"impostato su no , un nuovo documento verrà creato ogni volta che la password "
-"viene aggiornata."
+msgstr "Generare un nuovo documento solo quando si crea un nuovo account. Se impostato su no , un nuovo documento verrà creato ogni volta che la password viene aggiornata."
 
 #: forms.py:49
 msgid "Customization options"
-msgstr ""
+msgstr "Opzioni di personalizzazione"
 
 #: forms.py:52
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #: forms.py:54
 msgid "The document's title"
-msgstr ""
+msgstr "Il titolo del documento"
 
 #: forms.py:58
 msgid "Web panel url"
-msgstr ""
+msgstr "URL del pannello di controllo web"
 
 #: forms.py:59
 msgid "URL of the Modoboa web panel"
-msgstr ""
+msgstr "URL del pannello di controllo web di Modoboa"
 
 #: forms.py:63
 msgid "Custom message"
-msgstr ""
+msgstr "Messaggio personalizzato"
 
 #: forms.py:65
 msgid "A custom message that will appear at the end of documents"
-msgstr ""
+msgstr "Un messaggio personalizzato comparirà alla fine dei documenti"
 
 #: forms.py:70
 msgid "Include mail client connection settings"
-msgstr ""
+msgstr "Includi le impostazioni di connessione del client di posta"
 
 #: forms.py:73
 msgid ""
 "Include required SMTP and IMAP connection information to configure a mail "
 "client, a tablet or a phone"
-msgstr ""
+msgstr "Includi le informazioni di connessione SMTP e IMAP richieste per configurare un client di posta, un tablet o telefono"
 
 #: forms.py:80
 msgid "Address of the SMTP server (hostname or IP)"
-msgstr ""
+msgstr "Indirizzo del server SMTP (nome host o indirizzo IP)"
 
 #: forms.py:86
 msgid "Listening port of the SMTP server"
-msgstr ""
+msgstr "Porta di ascolto del server SMTP"
 
 #: forms.py:93 forms.py:111
 msgid "Connection security mechanism"
-msgstr ""
+msgstr "Meccanismo di sicurezza della connessione"
 
 #: forms.py:98
 msgid "Address of the IMAP server (hostname or IP)"
-msgstr ""
+msgstr "Indirizzo del server IMAP (nome host o indirizzo IP)"
 
 #: forms.py:104
 msgid "Listening port of the IMAP server"
-msgstr ""
+msgstr "Porta di ascolto del server IMAP"
 
 #: handlers.py:46
 msgid "Retrieve user's credentials as a PDF document"
