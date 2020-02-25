@@ -1,8 +1,10 @@
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
+app_name = "modoboa_pdfcredentials"
+
 urlpatterns = [
-    url(r'^credentials/(?P<accountid>\d+)/$', views.get_account_credentials,
-        name="account_credentials"),
+    path('credentials/<int:accountid>/', views.get_account_credentials,
+         name="account_credentials"),
 ]

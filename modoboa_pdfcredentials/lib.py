@@ -1,7 +1,5 @@
 """Internal library."""
 
-from __future__ import unicode_literals
-
 from io import BytesIO
 import os
 import struct
