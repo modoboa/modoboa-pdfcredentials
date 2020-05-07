@@ -2,8 +2,6 @@
 
 import os
 
-from rfc6266 import build_header
-
 from django.http import HttpResponse
 from django.utils.translation import ugettext as _
 
@@ -16,6 +14,7 @@ from modoboa.lib.exceptions import ModoboaException, PermDeniedException
 from modoboa.parameters import tools as param_tools
 
 from .lib import decrypt_file, get_creds_filename
+from .rfc6266 import build_header
 
 
 @login_required
